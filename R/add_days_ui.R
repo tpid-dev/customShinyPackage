@@ -23,9 +23,8 @@
 #'
 #' @export
 add_days_ui <- function(id) {
-  ns <- NS(id)  # This is to create unique input names
+  ns <- NS(id)
   tagList(
-    numericInput(ns("days"), "Enter number of days to add:", value = 1, min = 1),
     textOutput(ns("due_date"))
   )
 }
