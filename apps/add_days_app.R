@@ -1,33 +1,18 @@
-# Load the necessary libraries
+# Load necessary libraries
 library(shiny)
 library(customShinyPackage)
 
-
-# Main App UI
+# Define the UI
 ui <- fluidPage(
-  titlePanel("Add Days to Today's Date"),
-
-  sidebarLayout(
-    sidebarPanel(
-      numericInput("days", "Enter number of days to add:", value = 1, min = 1)
-    ),
-    mainPanel(
-      add_days_ui("add_days_module")
-    )
-  )
+  # Use the add_days_ui module
+  add_days_ui("add_days")
 )
 
-# Main App Server
+# Define the server logic
 server <- function(input, output, session) {
-  # Declare the reactive value for days
-  days <- reactive({
-    input$days
-  })
-
-  # Pass the reactive value to the add_days_server module
-  add_days_server("add_days_module", days = days)
+  # Use the add_days_server module
+  add_days_server("add_days")
 }
 
-
-# Run the Shiny App
+# Run the Shiny app
 shinyApp(ui, server)

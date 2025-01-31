@@ -1,24 +1,12 @@
 library(shiny)
 library(customShinyPackage)
 
-
-# Main UI of the app
 ui <- fluidPage(
-  titlePanel("Date and Countdown Timer"),
-  sidebarLayout(
-    sidebarPanel(
-      date_clock_ui("date_clock_module")  # Calling the module UI
-    ),
-    mainPanel(
-      # The main content is handled by the module itself
-    )
-  )
+  date_clock_ui("countdown_module")  # Insert UI Module
 )
 
-# Main Server function
 server <- function(input, output, session) {
-  callModule(date_clock_server, "date_clock_module")  # Calling the module server
+  date_clock_server("countdown_module")  # Activate Server Module
 }
 
-# Run the Shiny app
-shinyApp(ui = ui, server = server)
+shinyApp(ui, server)

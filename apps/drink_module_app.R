@@ -3,7 +3,7 @@ library(ggplot2)
 library(customShinyPackage)
 
 
-# 3. Main UI
+# Main UI
 ui <- fluidPage(
   titlePanel("Drink Consumption Tracker"),
 
@@ -17,7 +17,7 @@ ui <- fluidPage(
   )
 )
 
-# 4. Main Server Logic
+# Main Server Logic
 server <- function(input, output, session) {
 
   # Call the module and render its output

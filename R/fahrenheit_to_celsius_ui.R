@@ -5,27 +5,26 @@
 #' to display the equivalent temperature in Celsius.
 #'
 #' @param id \code{character} - The module ID. This is used to namespace the UI elements and prevent conflicts.
-#' @return A Shiny UI element (\code{tagList}) containing the input and output components for the module.
-#' @examples
-#' if (interactive()) {
-#'   library(shiny)
-#'
-#'   ui <- fluidPage(
-#'     fahrenheit_to_celsius_ui("temp_converter")
-#'   )
-#'
-#'   server <- function(input, output, session) {
-#'     # Logic for server-side module can be added separately
+#' @return A `tagList` containing:
+#'   \itemize{
+#'     \item A numeric input for entering the temperature in fahrenheit.
+#'     \item A text output for displaying the calculated temperature in celsius.
 #'   }
+#' @examples
+#' In a Shiny app, this UI module can be used as follows:
+#' # ui <- fluidPage(
+#' #    fahrenheit_to_celsius_ui("temp_converter")
+#' # )
+#' # server <- function(input, output, session) {
+#' #   fahrenheit_to_celsius_server("temp_converter", input, output, session)
+#' # }
 #'
-#'   shinyApp(ui, server)
-#' }
 #' @export
 fahrenheit_to_celsius_ui <- function(id) {
   ns <- NS(id)
-
   tagList(
     numericInput(ns("fahrenheit"), "Enter temperature in Fahrenheit:", value = 32, min = -100, max = 1000),
     textOutput(ns("celsius"))
   )
 }
+
