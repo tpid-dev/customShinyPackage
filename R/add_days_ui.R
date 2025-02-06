@@ -25,6 +25,7 @@
 add_days_ui <- function(id) {
   ns <- NS(id)
   tagList(
+    numericInput(ns("num_days"), "Number of days to add:", value = 1, min = 1),
     textOutput(ns("due_date"))
   )
 }

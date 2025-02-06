@@ -24,3 +24,4 @@ calculate_due_date <- function(days) {
   # Return the due date as a date object
   return(due_date)
 }
+
