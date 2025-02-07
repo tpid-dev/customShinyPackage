@@ -13,6 +13,7 @@ date_clock_server <- function(id) {
 
     # Reactive countdown calculation
     countdown <- reactive({
+      invalidateLater(1000, session)  # Refresh every second
       req(input$target_date)  # Ensure a date is selected
       time_diff <- calculate_time_diff(input$target_date)
       format_countdown(time_diff)
@@ -20,7 +21,6 @@ date_clock_server <- function(id) {
 
     # Update countdown every second
     output$countdown_timer <- renderText({
-      invalidateLater(1000, session)  # Refresh every second
       countdown()
     })
   })
