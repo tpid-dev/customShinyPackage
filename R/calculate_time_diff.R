@@ -10,8 +10,7 @@
 #' calculate_time_diff(Sys.Date() + 1)  # Difference between now and tomorrow
 #'
 #' @export
-calculate_time_diff <- function(target_date) {
-  current_time <- Sys.time()
+calculate_time_diff <- function(target_date, current_time = Sys.time()) {
   target_datetime <- as.POSIXct(target_date)  # Convert to POSIXct
   difftime(target_datetime, current_time, units = "secs")
 }

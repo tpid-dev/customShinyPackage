@@ -13,11 +13,13 @@
 #'
 #' @export
 format_countdown <- function(time_diff) {
+  time_diff <- as.numeric(time_diff, units = "secs")  # Ensure numeric value
+
   if (time_diff > 0) {
-    days <- floor(as.numeric(time_diff, units = "days"))
-    hours <- floor(as.numeric(time_diff, units = "hours")) %% 24
-    minutes <- floor(as.numeric(time_diff, units = "mins")) %% 60
-    seconds <- floor(as.numeric(time_diff, units = "secs")) %% 60
+    days <- floor(time_diff / (24 * 3600))
+    hours <- floor((time_diff %% (24 * 3600)) / 3600)
+    minutes <- floor((time_diff %% 3600) / 60)
+    seconds <- floor(time_diff %% 60)
 
     paste(days, "days,", hours, "hours,", minutes, "minutes, and", seconds, "seconds left")
   } else {

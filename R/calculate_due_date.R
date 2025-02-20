@@ -14,14 +14,12 @@
 #' calculate_due_date(0)
 #'
 #' @export
-calculate_due_date <- function(days) {
-  # Get today's date
-  today <- Sys.Date()
-
+calculate_due_date <- function(days, start_date = Sys.Date()) {
   # Calculate the due date
-  due_date <- today + days
+  due_date <- start_date + days
 
   # Return the due date as a date object
   return(due_date)
 }
+
 
