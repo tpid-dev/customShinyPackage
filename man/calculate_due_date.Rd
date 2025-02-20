@@ -4,7 +4,7 @@
 \alias{calculate_due_date}
 \title{Calculate a Due Date}
 \usage{
-calculate_due_date(days)
+calculate_due_date(days, start_date = Sys.Date())
 }
 \arguments{
 \item{days}{An integer specifying the number of days to add to today's date.}

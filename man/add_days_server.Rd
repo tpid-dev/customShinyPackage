@@ -4,14 +4,11 @@
 \alias{add_days_server}
 \title{Add Days Server}
 \usage{
-add_days_server(id, days)
+add_days_server(id)
 }
 \arguments{
 \item{id}{A unique identifier for the server module. This ID is used to associate the inputs and outputs
 within the module.}
-
-\item{days}{A numeric value representing the number of days to add to the current date. This parameter is passed
-to the module from the parent server or UI.}
 }
 \value{
 This function does not return a value. It updates the `output$due_date` with the calculated due date,
@@ -19,7 +16,7 @@ This function does not return a value. It updates the `output$due_date` with the
 }
 \description{
 This function defines the server-side logic for calculating a due date by adding a specified number of days
-to the current date. It reacts to a `days` parameter and updates the `due_date` output with the calculated date.
+to the current date. It reacts to a `num_days` input and updates the `due_date` output with the calculated date.
 }
 \details{
 The server module calculates the due date using the `calculate_due_date` function and displays the result
@@ -28,7 +25,7 @@ The server module calculates the due date using the `calculate_due_date` functio
 \examples{
 # In a Shiny app, this server module can be used as follows:
 # server <- function(input, output, session) {
-#   add_days_server("add_days", days = reactive(input$days))
+#   add_days_server("add_days")
 # }
 
 }

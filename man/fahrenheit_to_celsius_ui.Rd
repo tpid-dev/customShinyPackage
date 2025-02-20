@@ -10,7 +10,11 @@ fahrenheit_to_celsius_ui(id)
 \item{id}{\code{character} - The module ID. This is used to namespace the UI elements and prevent conflicts.}
 }
 \value{
-A Shiny UI element (\code{tagList}) containing the input and output components for the module.
+A `tagList` containing:
+  \itemize{
+    \item A numeric input for entering the temperature in fahrenheit.
+    \item A text output for displaying the calculated temperature in celsius.
+  }
 }
 \description{
 This function creates a Shiny UI module for converting Fahrenheit temperatures to Celsius.
@@ -18,17 +22,12 @@ It consists of a numeric input for entering a temperature in Fahrenheit and a te
 to display the equivalent temperature in Celsius.
 }
 \examples{
-if (interactive()) {
-  library(shiny)
+In a Shiny app, this UI module can be used as follows:
+# ui <- fluidPage(
+#    fahrenheit_to_celsius_ui("temp_converter")
+# )
+# server <- function(input, output, session) {
+#   fahrenheit_to_celsius_server("temp_converter", input, output, session)
+# }
 
-  ui <- fluidPage(
-    fahrenheit_to_celsius_ui("temp_converter")
-  )
-
-  server <- function(input, output, session) {
-    # Logic for server-side module can be added separately
-  }
-
-  shinyApp(ui, server)
-}
 }

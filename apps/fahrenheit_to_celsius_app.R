@@ -1,7 +1,6 @@
 library(shiny)
 library(customShinyPackage)
 
-
 # Main UI of the app
 ui <- fluidPage(
   titlePanel("Fahrenheit to Celsius Converter"),

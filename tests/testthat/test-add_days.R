@@ -1,14 +1,3 @@
-# Function tested
-calculate_due_date <- function(days, start_date = Sys.Date()) {
-  # Calculate the due date
-  due_date <- start_date + days
-
-  # Return the due date as a date object
-  return(due_date)
-}
-
-
-
 # 1. Test that number of days added gives correct date
 test_that("calculate_due_date correctly calculates future due dates", {
   fixed_date <- as.Date("2025-02-20")  # Fixed start date for testing

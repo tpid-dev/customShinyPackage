@@ -11,6 +11,8 @@
 #' # Assuming input contains the selected quantities
 #' # create_drinks_data(list(coffee = 2, energy_drink = 3, tea = 1, soft_drink = 5, water = 7))
 #' # This returns a data frame with drinks and counts.
+#'
+#' @export
 create_drinks_data <- function(input) {
   data.frame(
     Drink = c("Coffee", "Energy Drink", "Tea", "Soft Drink", "Water"),

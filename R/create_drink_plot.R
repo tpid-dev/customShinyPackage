@@ -10,6 +10,8 @@
 #' @examples
 #' # create_drink_plot(data.frame(Drink = c("Coffee", "Tea"), Count = c(2, 3)))
 #' # This returns a ggplot bar plot object.
+#'
+#' @export
 create_drink_plot <- function(drinks) {
   ggplot(drinks, aes(x = Drink, y = Count, fill = Drink)) +
     geom_bar(stat = "identity") +

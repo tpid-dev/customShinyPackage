@@ -1,20 +1,6 @@
 library(ggplot2)
 library(vdiffr)  # For visual testing
-
-create_drinks_data <- function(input) {
-  data.frame(
-    Drink = c("Coffee", "Energy Drink", "Tea", "Soft Drink", "Water"),
-    Count = c(input$coffee, input$energy_drink, input$tea, input$soft_drink, input$water)
-  )
-}
-
-create_drink_plot <- function(drinks) {
-  ggplot(drinks, aes(x = Drink, y = Count, fill = Drink)) +
-    geom_bar(stat = "identity") +
-    labs(title = "Drink Count", x = "Drink Type", y = "Number of Drinks") +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate labels for clarity
-}
+library(customShinyPackage)
 
 # 1. Test data creation function
 test_that("create_drinks_data returns correct structure", {

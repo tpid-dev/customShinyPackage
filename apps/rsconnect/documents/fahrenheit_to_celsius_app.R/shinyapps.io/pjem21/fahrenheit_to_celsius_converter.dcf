@@ -1,0 +1,13 @@
+name: fahrenheit_to_celsius_converter
+title: fahrenheit_to_celsius_converter
+username: pjem21
+account: pjem21
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14053953
+bundleId:
+url: https://pjem21.shinyapps.io/fahrenheit_to_celsius_converter/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: add_days_app.R|date_clock_app.R|drink_module_app.R
