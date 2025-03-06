@@ -5,7 +5,7 @@ account: pjem21
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 14053953
-bundleId:
+bundleId: 9866343
 url: https://pjem21.shinyapps.io/fahrenheit_to_celsius_converter/
 version: 1
 asMultiple: FALSE
